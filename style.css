@@ -1,0 +1,95 @@
+/* ============================================= */
+/* == EDITS FOR HERO SECTION & TRANSPARENT NAV == */
+/* ============================================= */
+
+/* STEP 1: Style the Hero Section with a Background Image */
+/* This now correctly targets the <section id="hero"> from your HTML */
+#hero {
+    color: white; /* Make the text inside (headings, paragraphs) white */
+    
+    /* UPDATED: Increased the overlay darkness from 0.55 to 0.6 for better contrast. */
+    /* REMEMBER: Add an image to your project at 'images/hero-background.jpg' */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* This adds a shadow to the main text in the hero section for better readability */
+#hero h1,
+#hero p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* STEP 2: Make the Header/Navigation Bar Transparent & Blurry */
+/* This now correctly targets the <header id="header"> from your HTML */
+#header {
+    /* UPDATED: Added a subtle background color and a backdrop-filter to create the blur/glass effect. */
+    background-color: rgba(255, 255, 255, 0.1); /* A very light, transparent white */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* For Safari browser support */
+}
+
+
+/* ============================================= */
+/* == YOUR ORIGINAL CSS STARTS BELOW == */
+/* ============================================= */
+
+
+/* Color Palette & Theme Variables (Handled by Tailwind Config in index.html)
+  ---------------------------------
+  --bg-color: #DEE8CE;
+  --surface-color: #FFF8E8;
+  --text-color: #1F2937;
+  --primary-accent: #BB653; 
+  --secondary-accent: #F08B51;
+  --border-color: #E5E7EB; 
+*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* UPDATED: Reverted to the original background color. */
+    background-color: #DEE8CE;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231F2937' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* On-Scroll Fade-In Animation
+  ---------------------------------
+*/
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Vertical Experience Timeline
+  ---------------------------------
+*/
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
+    border-left: 2px solid #E5E7EB; /* Using a neutral border color */
+}
+
+.timeline-item:last-child {
+    border-left: 2px solid transparent;
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -0.5rem;
+    top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #BB6653; 
+    /* UPDATED: The border now matches the reverted body background */
+    border: 2px solid #DEE8CE; 
+}

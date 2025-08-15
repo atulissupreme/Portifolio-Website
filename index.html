@@ -1,0 +1,277 @@
+<!--
+  Welcome to your main portfolio page, index.html!
+  This is the first page visitors will see.
+  I've added comments throughout this file to explain what each part does.
+-->
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Standard meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title that appears in the browser tab -->
+    <title>Atul Tiwari - Software Engineer</title>
+
+    <!-- The script for Tailwind CSS, which powers most of the styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Linking the 'Inter' font from Google Fonts for a professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Linking Font Awesome for icons (like the hamburger menu and social media links) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Linking your custom stylesheet for things like animations and the timeline -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 
+      This is the site header. It's 'fixed' to the top and has a glassy effect.
+      It contains your logo and the main navigation.
+    -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Your initials, linking back to the top of this page. -->
+            <a href="#" class="text-2xl font-bold text-white">AT.</a>
+
+            <!-- Desktop navigation. 'hidden md:flex' makes it hide on mobile. -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                 <a href="#about" class="text-white/90 hover:text-white transition duration-300">About</a>
+                <a href="projects.html" target="_blank" class="text-white/90 hover:text-white transition duration-300">Projects</a>
+                <a href="experience.html" target="_blank" class="text-white/90 hover:text-white transition duration-300">Experience</a>
+                <a href="blog.html" target="_blank" class="text-white/90 hover:text-white transition duration-300">Blog</a>
+                <a href="#contact" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- The hamburger menu button, visible only on mobile ('md:hidden'). -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- The mobile navigation menu, hidden by default. JavaScript will toggle its visibility. -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#about" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">About</a>
+            <a href="projects.html" target="_blank" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Projects</a>
+            <a href="experience.html" target="_blank" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Experience</a>
+            <a href="blog.html" target="_blank" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Blog</a>
+            <a href="#contact" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- The <main> tag contains the primary content of your page. -->
+    <main>
+        <!-- 
+          HERO SECTION 
+          This is the big, welcoming section at the top of your page.
+          - 'id="hero"': This ID allows other links (like from the nav) to scroll directly to this spot.
+          - 'min-h-screen': Makes the section at least as tall as the screen.
+          - 'flex items-center': Centers the content vertically.
+        -->
+        <section id="hero" class="min-h-screen flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 scroll-animate">Crafting solutions for your needs, don't care the domain</h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 scroll-animate" style="transition-delay: 150ms;">
+                        A passionate Engineer fluent in building robust, Electrical Systems and effiecent Embbedded solutions.
+                    </p>
+                    <div class="flex justify-center gap-4 flex-wrap scroll-animate" style="transition-delay: 300ms;">
+                        <!-- This button links to your projects page. -->
+                        <a href="projects.html" target="_blank" class="bg-blue-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-600 transition duration-300 transform hover:scale-105">View My Work</a>
+                        <!-- 
+                          IMPORTANT: This "View Resume" button is a placeholder. 
+                          You should replace the '#' with a link to your actual resume PDF.
+                          For example: href="resume.pdf"
+                          Make sure to add your resume file to the same folder as this HTML file.
+                        -->
+                        <a href="https://drive.google.com/file/d/1_t1JkZm01WMV18kAmvG2040BzaQk7r9U/view?usp=sharing" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-md font-semibold hover:bg-gray-300 transition duration-300 transform hover:scale-105">View Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          ABOUT & TOOLKIT SECTION
+          A section to introduce yourself and list your skills.
+        -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <!-- 'grid md:grid-cols-2' creates a two-column layout on medium screens and up. -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="scroll-animate">
+                        <h2 class="text-3xl font-bold mb-4">Who I Am</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            I'm Atul Tiwari, an engineer based in Mesra, India. My journey in Tech and Engineering cannot belaid on a stright line it is multi-variable and fultiple function graph very difficult to understand but one thing is for sure that i can takle majority of the problems thrown at me.
+                        </p>
+                    </div>
+                    <div class="scroll-animate" style="transition-delay: 150ms;">
+                        <h2 class="text-3xl font-bold mb-4">Core Technologies</h2>
+                        <!-- This div will hold the technology tags. 'flex flex-wrap gap-3' makes them wrap nicely on smaller screens. -->
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">JavaScript (ES6+)</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">React</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">Node.js</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">Express</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">Python</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">MongoDB</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">SQL</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium cursor-pointer hover:bg-blue-200 transition">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+          PROJECTS SNIPPET SECTION
+          A small preview of your projects to encourage visitors to see the full page.
+        -->
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4 scroll-animate">Recent Projects</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto scroll-animate">Here's a glimpse of what I've had worked on. Check out my projects page for a more detailed list.</p>
+                <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Project Snippet 1 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden scroll-animate transform hover:-translate-y-2 transition-transform duration-300">
+                        <!-- 
+                          PLACEHOLDER IMAGE: Remember to replace this with a real screenshot of your project.
+                          Example: <img src="images/project-ecommerce.png" ... >
+                        -->
+                        <img src="buggy.jgp" alt="Project One" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-2xl font-bold mb-2">SEMRL Vidyut 1</h3>
+                            <p class="text-gray-600 mb-4">A full scale all wheel drive semi-autonomus EV.</p>
+                        </div>
+                    </div>
+                    <!-- Project Snippet 2 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden scroll-animate transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 150ms;">
+                        <img src="buck.jpg" alt="Project Two" class="w-full h-56 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-2xl font-bold mb-2">DC-DC Buck Converter</h3>
+                            <p class="text-gray-600 mb-4">A DC-DC converter reaching a efficicncy of over 88% using conventional topology.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- This button links to your full projects page. -->
+                <a href="projects.html" target="_blank" class="mt-12 inline-block bg-blue-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-600 transition duration-300">View All Projects</a>
+            </div>
+        </section>
+
+        <!-- 
+          EXPERIENCE SNIPPET SECTION
+          A brief preview of your experience timeline.
+        -->
+        <section id="experience" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4 scroll-animate">Career Journey</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto scroll-animate">A brief look at my professional and academic background.</p>
+                <!-- This is the container for the timeline. The styling is in style.css -->
+                <div class="max-w-3xl mx-auto text-left scroll-animate">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-bold">Engineer Intern</h3>
+                        <p class="text-gray-600 font-medium mb-1">Larson and Toubro | Summer 2025</p>
+                        <p class="text-gray-600">Contributed to the Erection of 184MW PV along with 254MWh BESS Plant.</p>
+                    </div>
+                </div>
+                <a href="experience.html" target="_blank" class="mt-8 inline-block bg-blue-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-600 transition duration-300">View Full Experience</a>
+            </div>
+        </section>
+
+        <!-- 
+          BLOG SNIPPET SECTION
+          Shows your most recent blog post to draw visitors in.
+        -->
+        <section id="blog" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4 scroll-animate">Latest Article</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto scroll-animate">I occasionally write about technology and web development. Here's my most recent post.</p>
+                <div class="max-w-md mx-auto bg-gray-50 rounded-lg shadow-md overflow-hidden scroll-animate transform hover:-translate-y-2 transition-transform duration-300">
+                    <!-- PLACEHOLDER IMAGE: Replace with a relevant image for your blog post. -->
+                    <img src="neural.jpg" alt="Blog Post" class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <p class="text-sm text-gray-500 mb-2">August 10, 2025</p>
+                        <h3 class="text-xl font-bold mb-2">My venture into Deep Learning</h3>
+                        <p class="text-gray-600 mb-4">This is the part of my life where i got into Deep learning...</p>
+                    </div>
+                </div>
+                <a href="blog.html" target="_blank" class="mt-12 inline-block bg-blue-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-600 transition duration-300">Visit My Blog</a>
+            </div>
+        </section>
+
+        <!-- 
+          CONTACT SECTION
+          A form for visitors to get in touch with you.
+        -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-4 scroll-animate">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8 scroll-animate">
+                        Have a question or want to work together? Feel free to reach out. I'm always open to discussing new projects and opportunities.
+                    </p>
+                    <!-- 
+                      This is a simple HTML form. For it to actually send emails, you would need a backend service like Formspree, Netlify Forms, or your own server-side code.
+                      For now, our JavaScript will just show a "Thank you" message.
+                    -->
+                    <form id="contact-form" class="scroll-animate">
+                        <div class="mb-4">
+                            <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" id="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea id="message" name="message" rows="4" placeholder="Your Message" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-600 transition duration-300 w-full">Send Message</button>
+                    </form>
+                    <!-- This paragraph is where the JavaScript will display the "Thank you" message. -->
+                    <p id="form-feedback" class="mt-4 text-green-600"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+      FOOTER SECTION
+      The bottom of your website.
+    -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- 
+                  IMPORTANT: Replace the '#' with your actual social media profile URLs.
+                  e.g., href="https://github.com/yourusername"
+                -->
+                <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Atul Tiwari. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 
+      SCROLL TO TOP BUTTON
+      This button is hidden by default and appears when the user scrolls down.
+      JavaScript handles its visibility and click action.
+    -->
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-blue-500 text-white w-12 h-12 rounded-full hidden justify-center items-center shadow-lg hover:bg-blue-600 transition">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 
+      Linking your JavaScript file. It's placed at the end of the <body> so that the page content loads first.
+      The 'defer' attribute makes sure the script runs only after the whole page is ready.
+    -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>

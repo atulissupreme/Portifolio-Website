@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title | Your Name</title>
+  <meta name="description" content="A detailed look at the AI-Powered Lane Detection System project by Your Name.">
+  <!-- Re-using the same head content for consistency -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header id="header" class="sticky top-0 w-full z-50 transition-all duration-300 scrolled">
+     <nav class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl font-bold">YourName.</a>
+      <ul class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+      </ul>
+      <a href="contact.html" class="hidden md:inline-block cta-button">Contact Me</a>
+      <button class="md:hidden text-2xl" id="menu-btn" aria-label="Open menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Main Project Detail Content -->
+  <main class="container mx-auto px-4 py-12">
+    <article class="max-w-4xl mx-auto">
+      <header class="mb-12">
+        <a href="projects.html" class="text-blue-600 hover:underline">&larr; Back to all projects</a>
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">AI-Powered Lane Detection System</h1>
+        <p class="mt-4 text-lg text-gray-600">A real-time lane detection system for autonomous vehicles, deployed on a Jetson Nano.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm">
+            <div class="flex items-center gap-2"><strong>Role:</strong> Lead Developer</div>
+            <div class="flex items-center gap-2"><strong>Timeline:</strong> 3 Months</div>
+            <div class="flex items-center gap-2"><strong>Tech:</strong> Python, OpenCV, TensorRT</div>
+        </div>
+      </header>
+      
+      <img src="https://placehold.co/1200x600/38BDF8/FFFFFF?text=Main+Project+Image" alt="Main project image" class="w-full rounded-lg shadow-lg mb-12">
+      
+      <div class="prose max-w-none">
+        <h3>About The Project</h3>
+        <p>This project was developed to create a robust and efficient lane detection algorithm capable of running on edge devices with limited computational power. The primary goal was to achieve high accuracy and real-time performance, making it suitable for autonomous ground vehicles (AGVs). The system processes a live video feed, identifies lane markings, and calculates the vehicle's position relative to the lane, providing crucial data for navigation.</p>
+        
+        <h3>Challenges & Solutions</h3>
+        <p>One of the biggest challenges was performance optimization for the NVIDIA Jetson Nano. The initial Python and OpenCV implementation was too slow. To solve this, the deep learning model was converted and optimized using NVIDIA's TensorRT, which significantly accelerated inference speed. Another challenge was handling difficult lighting conditions and worn-out lane markings. This was addressed by implementing advanced image pre-processing techniques, such as adaptive thresholding and perspective transforms, to enhance the visibility of the lanes before feeding the frames to the model.</p>
+
+        <h3>Image Gallery</h3>
+        <div class="grid grid-cols-2 gap-4 my-8">
+            <img src="https://placehold.co/800x600/38BDF8/FFFFFF?text=System+Diagram" alt="System architecture diagram" class="w-full rounded-lg">
+            <img src="https://placehold.co/800x600/38BDF8/FFFFFF?text=Hardware+Setup" alt="Hardware setup with Jetson Nano" class="w-full rounded-lg">
+        </div>
+
+        <h3>Key Learnings</h3>
+        <ul>
+          <li>Deep understanding of computer vision techniques for autonomous navigation.</li>
+          <li>Expertise in model optimization for embedded systems using TensorRT.</li>
+          <li>Experience in integrating hardware (camera, Jetson Nano) with software to create a cohesive system.</li>
+        </ul>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200 flex gap-4">
+        <a href="#" class="cta-button">View Live Demo</a>
+        <a href="#" class="secondary-button">View Source Code</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-20">
+    <div class="container mx-auto px-4 py-6 text-center text-sm">
+      <p class="text-gray-500">&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

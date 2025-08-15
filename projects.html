@@ -1,0 +1,233 @@
+﻿<!--
+  Welcome to your projects.html file!
+  This is an HTML comment. Anything between <!-- and --> is ignored by the browser.
+  I'll use these comments to explain everything to you.
+-->
+
+<!-- 
+  <!DOCTYPE html> tells the browser that this document is an HTML5 file. It's the standard first line for any modern webpage.
+-->
+<!DOCTYPE html>
+
+<!-- 
+  The <html> tag is the root element of the entire page. 
+  'lang="en"' means the language of the page is English, which is good for accessibility and search engines.
+  'class="scroll-smooth"' is a Tailwind CSS class that makes scrolling smooth when you click on a link that goes to another part of the page (like a "Back to Top" button).
+-->
+<html lang="en" class="scroll-smooth">
+
+<!-- 
+  The <head> section contains meta-information about your webpage. 
+  This information is not displayed on the page itself but is used by browsers, search engines, and other web services.
+-->
+<head>
+    <!-- 'charset="UTF-8"' sets the character encoding for the page. UTF-8 is the standard and can handle almost any character or symbol. -->
+    <meta charset="UTF-8">
+
+    <!-- The viewport meta tag is crucial for responsive design. It tells the browser how to control the page's dimensions and scaling. 'width=device-width' makes the page width match the screen width of the device, and 'initial-scale=1.0' sets the initial zoom level. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The <title> tag sets the title of the browser tab. This is also very important for search engine optimization (SEO). -->
+    <title>Projects | Atul Tiwari</title>
+
+    <!-- This is the Tailwind CSS script. Tailwind is a "utility-first" CSS framework, which means it gives you a bunch of pre-made classes (like 'bg-white', 'text-2xl', 'font-bold') to style your site directly in the HTML. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- These lines are for loading the 'Inter' font from Google Fonts. A custom font makes your site look much more professional than the default browser fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- This line links to Font Awesome, which is a library of icons. We use it for the social media icons (like GitHub, LinkedIn) and the hamburger menu icon. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- This links to your custom stylesheet, 'style.css'. This is where you put CSS rules that are too complex or repetitive for Tailwind, like the timeline dot. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--
+  The <body> tag contains all the visible content of your webpage.
+  The classes here set the default styles for the whole page:
+  - 'bg-gray-50': Sets a very light gray background color.
+  - 'text-gray-800': Sets a dark gray color for all the text.
+-->
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 
+      The <header> is a semantic tag for the top section of your site. It usually contains the logo and navigation.
+      - 'id="header"': An identifier for this element, used by our JavaScript.
+      - 'bg-white/80': A white background with 80% opacity, which creates a see-through effect.
+      - 'backdrop-blur-md': This creates the "glassy" blur effect on the content scrolling behind the header.
+      - 'fixed top-0 left-0 right-0': This makes the header stick to the top of the screen as you scroll.
+      - 'z-50': This sets the "stacking order." A high z-index ensures the header stays on top of all other content.
+      - 'shadow-sm': A small, subtle shadow to lift the header off the page.
+    -->
+    <header id="header" class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
+        <!-- 
+          - 'container mx-auto': This centers your content and gives it a maximum width, so it doesn't stretch too wide on large screens.
+          - 'px-6 py-4': Sets padding on the x-axis (left and right) and y-axis (top and bottom).
+          - 'flex justify-between items-center': These are flexbox classes. They turn the container into a flexible box, push the logo and nav to opposite ends ('justify-between'), and align them vertically in the middle ('items-center').
+        -->
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Your logo/initials. Clicking this takes you back to the main page. -->
+            <a href="index.html" class="text-2xl font-bold text-gray-800">AT.</a>
+
+            <!-- The <nav> tag is for your main navigation links. 'hidden md:flex' means it's hidden on small (mobile) screens but becomes a flex container on medium screens ('md') and up. -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#about" class="text-gray-600 hover:text-blue-500 transition duration-300">About</a>
+                <a href="projects.html" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">Projects</a>
+                <a href="experience.html" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">Experience</a>
+                <a href="blog.html" target="_blank" class="text-gray-600 hover:text-blue-500 transition duration-300">Blog</a>
+                <a href="index.html#contact" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Contact</a>
+            </nav>
+
+            <!-- This is the hamburger menu button for mobile. 'md:hidden' makes it appear ONLY on small screens. -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i> <!-- This is the icon from Font Awesome. -->
+            </button>
+        </div>
+
+        <!-- This is the mobile menu itself. It's hidden by default and our JavaScript will show/hide it when the button is clicked. -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html#about" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">About</a>
+            <a href="projects.html" target="_blank" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Projects</a>
+            <a href="experience.html" target="_blank" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Experience</a>
+            <a href="blog.html" target="_blank" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Blog</a>
+            <a href="index.html#contact" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- The <main> tag holds the primary content of the page. -->
+    <main>
+        <!-- 
+          This is the "hero" or title section for your projects page.
+          - 'py-32': Gives it a lot of vertical padding to push the content down from the sticky header.
+          - 'bg-white': Sets a solid white background.
+        -->
+        <section class="py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <!-- 
+                  - 'text-5xl md:text-6xl': The text is very large, and even larger on medium screens and up.
+                  - 'font-bold': Makes the text bold.
+                  - 'mb-4': Adds a margin to the bottom.
+                -->
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">My Work</h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">A collection of projects I've built, from web applications to embedded systems.</p>
+            </div>
+        </section>
+
+        <!-- This section will contain the grid of your actual projects. -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <!-- 
+                  This div creates the grid layout for your project cards.
+                  - 'grid': Turns the div into a grid container.
+                  - 'md:grid-cols-1': On medium screens, it's a single column.
+                  - 'lg:grid-cols-2': On large screens, it becomes a two-column grid.
+                  - 'gap-10': Sets the spacing between the grid items.
+                -->
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-10">
+                    
+                    <!-- ============================= -->
+                    <!--      START OF PROJECT 1       -->
+                    <!-- ============================= -->
+                    <!-- 
+                      This is a single project card.
+                      - 'bg-white rounded-lg shadow-md': Gives it a white background, rounded corners, and a nice shadow.
+                      - 'overflow-hidden': Ensures the image corners are also rounded.
+                      - 'transform hover:-translate-y-2 transition-transform duration-300': This is a cool animation! On hover, it moves the card up slightly ('-translate-y-2') with a smooth transition.
+                    -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <!-- 
+                          This is a placeholder image from placehold.co. You can customize it!
+                          - 'src="https://placehold.co/800x600/3B82F6/FFFFFF?text=Project+1"':
+                            - 800x600 is the size.
+                            - 3B82F6 is the background color (blue).
+                            - FFFFFF is the text color (white).
+                            - ?text=Project+1 is the text it displays.
+                          - Replace this 'src' with the path to your actual project screenshot, e.g., 'src="images/project1.png"'.
+                        -->
+                        <img src="https://placehold.co/800x600/3B82F6/FFFFFF?text=Project+1" alt="Project 1 Screenshot" class="w-full h-64 object-cover">
+                        
+                        <!-- This div holds the text content for the project card. 'p-6' gives it padding. -->
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold">AI-Powered Lane Detection</h3>
+                            <p class="mt-2 text-gray-600">A real-time lane detection system for autonomous vehicles, built with Python and OpenCV.</p>
+                            
+                            <!-- These are the technology "tags". -->
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">OpenCV</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TensorRT</span>
+                            </div>
+
+                            <!-- This link would go to a more detailed page about the project. -->
+                            <div class="mt-6">
+                                <a href="#" class="text-blue-500 font-semibold hover:underline">View Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================= -->
+                    <!--       END OF PROJECT 1        -->
+                    <!-- ============================= -->
+
+
+                    <!-- ============================= -->
+                    <!--      START OF PROJECT 2       -->
+                    <!-- ============================= -->
+                    <!-- To add a new project, you can copy and paste the entire block from "START OF PROJECT 1" to "END OF PROJECT 1" right here and then change the details. -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/800x600/1F2937/FFFFFF?text=Project+2" alt="Project 2 Screenshot" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold">Modern E-Commerce Platform</h3>
+                            <p class="mt-2 text-gray-600">A full-stack e-commerce website featuring a custom CMS and Stripe integration.</p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            </div>
+                            <div class="mt-6">
+                                <a href="#" class="text-blue-500 font-semibold hover:underline">View Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================= -->
+                    <!--       END OF PROJECT 2        -->
+                    <!-- ============================= -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 
+      The <footer> is the bottom section of your site.
+      - 'bg-gray-800 text-white': A dark background with white text.
+    -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <!-- This div holds the social media icons. -->
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- 
+                  These are your social media links. 
+                  IMPORTANT: You need to replace the '#' in the 'href' with your actual profile URLs.
+                  For example: href="https://github.com/yourusername"
+                -->
+                <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-2xl hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Copyright notice. -->
+            <p>&copy; 2025 Atul Tiwari. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 
+      This is the 'script.js' file. It's best to put script tags at the end of the body.
+      This allows the HTML to load and render first, so the page appears faster for the user.
+      The 'defer' attribute tells the browser to download the script while the HTML is parsing, but only execute it after the HTML is fully parsed.
+    -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>

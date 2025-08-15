@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Title | Your Name</title>
+  <!-- Re-using the same head content for consistency -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header id="header" class="sticky top-0 w-full z-50 transition-all duration-300 scrolled">
+     <nav class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl font-bold">YourName.</a>
+      <ul class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+      </ul>
+      <a href="index.html#contact" class="hidden md:inline-block cta-button">Contact Me</a>
+      <button class="md:hidden text-2xl" id="menu-btn" aria-label="Open menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Main Blog Post Content -->
+  <main class="container mx-auto px-4 py-12">
+    <article class="max-w-3xl mx-auto">
+      <header class="mb-12">
+        <a href="blog.html" class="text-blue-600 hover:underline">&larr; Back to all articles</a>
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">My Transition from Electronics to Software Engineering</h1>
+        <p class="mt-4 text-gray-500">Published on August 15, 2025 by Your Name</p>
+      </header>
+      
+      <img src="https://placehold.co/1200x600/F472B6/FFFFFF?text=My+Transition" alt="Blog post header image" class="w-full rounded-lg shadow-lg mb-12">
+      
+      <div class="prose max-w-none">
+        <p>The journey from designing circuits to architecting software wasn't just a career change; it was a shift in perspective. It started with a simple realization: the logic that governs a microcontroller is the same fundamental logic that powers a complex web application. This post explores the challenges, the 'aha!' moments, and the transferable skills I discovered along the way.</p>
+        
+        <p>One of the biggest hurdles was embracing the abstract nature of software. Unlike hardware, where you can physically probe a connection, software requires a different set of debugging tools and a more abstract mental model. Learning to navigate call stacks, understand memory management, and appreciate the elegance of algorithms felt like learning a new language.</p>
+
+        <img src="https://placehold.co/800x400/F472B6/FFFFFF?text=Code+on+Screen" alt="Code on a screen" class="w-full rounded-lg my-8">
+
+        <p>But soon, I found that my systems-thinking approach from electronics—understanding how components interact to form a whole—was my greatest asset in software design. Whether it's a series of logic gates or a microservices architecture, the core principle is the same: breaking down a complex system into smaller, manageable parts.</p>
+
+        <h3>Key Takeaways</h3>
+        <ul>
+          <li><strong>Systems Thinking is Universal:</strong> The ability to see the big picture is invaluable in both hardware and software.</li>
+          <li><strong>Embrace Abstraction:</strong> Learning to trust the layers of abstraction in software is key to being productive.</li>
+          <li><strong>Debugging is a Mindset:</strong> The methodical process of elimination used in hardware troubleshooting applies directly to finding software bugs.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-20">
+    <div class="container mx-auto px-4 py-6 text-center text-sm">
+      <p class="text-gray-500">&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

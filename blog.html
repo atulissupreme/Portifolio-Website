@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Your Name</title>
+  <meta name="description" content="Thoughts, articles, and stories from Your Name.">
+  <!-- Re-using the same head content for consistency -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header (Same as index.html but with active link logic handled by JS) -->
+  <header id="header" class="sticky top-0 w-full z-50 transition-all duration-300 scrolled">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl font-bold">YourName.</a>
+      <ul class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+      </ul>
+      <a href="index.html#contact" class="hidden md:inline-block cta-button">Contact Me</a>
+      <button class="md:hidden text-2xl" id="menu-btn" aria-label="Open menu">☰</button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-sm shadow-lg p-4">
+      <a href="index.html#about" class="block py-2">About</a>
+      <a href="index.html#projects" class="block py-2">Projects</a>
+      <a href="index.html#experience" class="block py-2">Experience</a>
+      <a href="blog.html" class="block py-2">Blog</a>
+      <a href="index.html#contact" class="block py-2 mt-2 cta-button">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- Main Blog Content -->
+  <main class="container mx-auto px-4 py-20">
+    <header class="text-center my-12">
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">From the Desk of Your Name</h1>
+      <p class="mt-4 text-lg text-gray-600">A collection of articles on tech, life, and everything in between.</p>
+    </header>
+
+    <!-- Blog Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Demo Blog Posts (x20) -->
+      <script>
+        const posts = [
+          { title: "My Transition to Software Engineering", category: "Career", image: "F472B6" },
+          { title: "Winning My First Hackathon", category: "Competition", image: "A78BFA" },
+          { title: "Deep Dive into React Hooks", category: "Web Dev", image: "38BDF8" },
+          { title: "Optimizing C++ for Embedded Systems", category: "Electronics", image: "F59E0B" },
+          { title: "A Guide to Python's Asyncio", category: "Software", image: "10B981" },
+          { title: "The Art of UI/UX Design", category: "Design", image: "EC4899" },
+          { title: "Deploying a Node.js App with Docker", category: "DevOps", image: "6366F1" },
+          { title: "My Journey with Machine Learning", category: "AI", image: "8B5CF6" },
+          { title: "Building a Custom Mechanical Keyboard", category: "Hobby", image: "D946EF" },
+          { title: "Thoughts on the Future of AI", category: "AI", image: "0EA5E9" },
+          { title: "Why I Chose a Static Site Generator", category: "Web Dev", image: "F97315" },
+          { title: "Debugging Embedded Systems", category: "Electronics", image: "4F46E5" },
+          { title: "A Look at Modern Database Technologies", category: "Software", image: "059669" },
+          { title: "The Importance of Version Control", category: "Career", image: "64748B" },
+          { title: "My Favorite VS Code Extensions", category: "Productivity", image: "3B82F6" },
+          { title: "Balancing Work and Personal Projects", category: "Life", image: "14B8A6" },
+          { title: "How to Prepare for a Technical Interview", category: "Career", image: "BE185D" },
+          { title: "Exploring the World of IoT", category: "Electronics", image: "9333EA" },
+          { title: "Creative Coding with p5.js", category: "Hobby", image: "F43F5E" },
+          { title: "A Year in Review: Lessons Learned", category: "Life", image: "78716C" },
+        ];
+
+        posts.forEach(post => {
+          document.write(`
+            <a href="blog-post.html" class="blog-post-card group">
+              <div class="overflow-hidden rounded-lg">
+                <img src="https://placehold.co/600x400/${post.image}/FFFFFF?text=${encodeURIComponent(post.category)}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div class="p-4">
+                <p class="text-sm text-blue-600 font-medium">${post.category}</p>
+                <h3 class="mt-2 text-lg font-bold group-hover:text-blue-600 transition-colors duration-300">${post.title}</h3>
+                <p class="mt-4 text-sm text-gray-500">Read More &rarr;</p>
+              </div>
+            </a>
+          `);
+        });
+      </script>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-20">
+    <div class="container mx-auto px-4 py-6 text-center text-sm">
+      <p class="text-gray-500">&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
